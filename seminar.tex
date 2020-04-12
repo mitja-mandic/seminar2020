@@ -5,6 +5,10 @@
 \usepackage{lmodern} 
 \usepackage{hyperref}
 \usepackage{blindtext}
+\usepackage{amsmath}  % razna okolja za poravnane enačbe ipd.
+\usepackage{amsthm}   % definicije okolij za izreke, definicije, ...
+\usepackage{amssymb}  % dodatni matematični simboli
+%\usepackage{xypic}
 
 \title{Opcije na obrestne mere\\
     \textit{Interest rate options}}
@@ -29,22 +33,57 @@ Napovedano je bilo, da bo letina oljk večja od običajne, zato si je pred žetv
 stiskalnice po precej višji ceni kot je plačal za najem stiskalnic.
 
 \section{Na splošno o opcijah}
-Opcija je pogodba, v kateri prodajalec (ang \textit{writer}) kupcu zagotovi pravico, vendar ne obveze, da bo prodajalcu prodal
-ali od njega kupil osnovno premoženje (ang \textit{the underlying}) do vključno vnaprej dogovorjenega datuma (\textit{expiration date}). Po tem opcija zapade.
-Prodajalec v zameno dobi določeno vsoto denarja, ki jo imenujemo premija, cena po kateri se premoženje predaja oziroma kupuje
-pa je izvršilna cena (ang \textit{strike price}). Glede na možnost izvršitve pogodbe, ločimo:
+
+Opcija je pogodba, v kateri prodajalec (ang. \textit{writer}) kupcu (tudi nosilcu) zagotovi pravico, 
+vendar ne obveze, da bo od nosilca kupil (ang. \textit{put option})
+ali mu prodal (ang. \textit{call option}) osnovno premoženje (ang. \textit{the underlying}) do 
+vključno vnaprej dogovorjenega datuma (\textit{expiration date}).
+Po tem opcija zapade.  V tej nalogi se bomo osredotičili na opcije, kjer je
+osnovno premoženje obrestna mera ali obrestni instrument. Prodajalec v zameno dobi določeno vsoto denarja, ki jo imenujemo premija, 
+cena po kateri se premoženje predaja oziroma kupuje pa je izvršilna cena (ang. \textit{strike price}).
+Glede na možnost izvršitve pogodbe ločimo:
 \begin{itemize}
     \item evropske opcije - izvršitev je možna le na dan zapadlosti
     \item ameriške opcije - izvršitev je možna kadarkoli do vključno dneva zapadlosti
     \item eksotične opcije - izvršitev je možna na določene datume (atlantske, bermuda, \ldots)
-\end{itemize}
-Z opcijami se trguje tako na organiziranem trgu (borze), kot tudi na prostem trgu (ang \textit{over-the-counter}). Na borzah so
+\end{itemize} \par
+Z opcijami se trguje tako na organiziranem trgu (borze), kot tudi na prostem trgu (ang. \textit{over-the-counter}). Na borzah so
 standardizirane in se trguje predvsem z opcijami na delnice, terminske pogodbe in blago, medtem ko se na prostem trgu trguje z opcijami
 na devizne tečaje in obrestne mere.
 
+\subsection{Lastnosti trgovanja z opcijami}
+Po tem ko kupec opcije plača premijo, nima več obveznosti, le še pravice, prodajalec pa se mora držati dogovora - torej prodati
+oziroma kupiti premoženje, če se kupec za to odloči. Največ kar investitor lahko izgubi je premija,
+prodajalec pa lahko največ zasluži s prodajo opcije. Torej ima investitor možnost za potencialen profit,
+prodajalec pa potencialno tveganje za izgubo. \par
+Pri trgovanju z opcijami lahko zavzamemo štiri pozicije:
+\begin{enumerate}
+    \item Dolgo prodajno (nakup prodajne opcije)
+    \item Kratko prodajno (prodaja prodajne opcije)
+    \item Dolgo nakupno (nakup nakupne opcije)
+    \item Kratko nakupno (prodaja nakupne opcije)
+\end{enumerate}
+\pagebreak
+Oglejmo si možnost izplačil opcij, če jih izvršimo na dan zapadlosti. Opcijo nosilec izvrši, če ima od tega profit, torej
+če je vrednost opcije v času izvršitve pozitivna. vrednost opcije je za nosilca razlika med ceno osnovnega premoženja in premijo.
+Če s $C_{t}$ označino vrednost nakupne opcije in s $P_{t}$ vrednost prodajne, je izplačilo enako:
+\begin{center}
+$C_{t}$ = max$\{$vrednost osnovnega premoženja - premija, 0$\}$ \\
+$P_{t}$ = max$\{$0, premija - vrednost osnovnega premoženja$\}$
+\end{center}
+Če je izplačilo pozitivno, se opcija splača (ang. \textit{in the money}), če je premija enaka vrednosti osnovnega premoženja
+je opcija na meji (ang. \textit{at the money}), in če je razlika manša od nič se opcija ne splača(ang. \textit{out of money}).
 
-\subsection{Nakupne opcije}
-Nakupne opcije (ang \textit{call options}) dajejo kupcu pravico, ne pa tudi obveze, da bo do zapadlosti kupil premoženje od prodajalca.
-Slednji je zavezan prodati, če se kupec za to odloči. 
+\section{Razlike med terminskimi pogodbami in opcijami}
+Glavna razlika med terminskimi pogodbami in opcijami je, da opcije nosilcu ni potrebno ni potrebno izvršiti. Kupec ima pravico,
+vendar ne obveze, kar pa ne velja za terminske pogodbe - tam morata obe strani izpolniti svoj del posla.
+Posledično je razmerje med tveganjem in nagrado za instrumenta različno. Kupec terminske pogodbe pri naraščanju vrednosti
+realizira dolar-za-dolar profit in dolar-za-dolar izgubo ko vrednost pogodbe pada, prodajalec pa ravno nasprotno. V primeru
+opcij pa ni take simetrije - največ kar investitor lahko izgubi je premija, kar je hkrati največji profit, ki ga lahko dobi prodajalec;
+to je kompenzacija za potencialno izgubo.
 
+Obe stranki pri terminski pogodbi morata na svoja vzdrževalna računa položiti kritje in ga vzdrževati. Takih zahtev za kupca opcije
+po plačilu premije ni, saj ne glede na obnašanje osnovnega premoženja ne more izgubiti več kot premijo in zato ni potrebe po kritju.
+Drugače je za prodajalca. Ker on nosi tveganje mora imeti vzdrževalni račun, nanj pa običajno položi premijo kot kritje. Če se cena 
+opcije spreminja, mora kritje vzdrževati.  
 \end{document}
