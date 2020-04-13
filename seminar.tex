@@ -106,9 +106,35 @@ saj te opcije uporabljajo kot del upravljaja s tveganjem (ang. \textit{asset/lia
 Pri borznih opcijah osnovni kapital lahko predstavljajo tako instrumenti s fiksno obrestno mero (ang. \textit{options on physicals}),
 kot terminske pogodbe o obrestni meri.
 
-\subsection{Opcije na borzah}
+\subsection{Opcije na borzi}
+V tem razdelku si bomo ogledali standardizirane opcije, s katerimi se trguje na borzi. Prevladujejo opcije na terminske pogodbe,
+zato bomo njim posvetili večino odseka, na koncu pa obrazložili, zakaj prevladujejo ravno te.
 
 \subsubsection{Opcije na terminsko pogodbo o obrestni meri}
+Opcije na terminske pogodbe obstajajo na vse terminske pogodbe omenjene v seminarski nalogi Tima Kalana z naslovom \textit{Terminske
+pogodbe o obrestni meri}. Opcija na terminsko pogodbo o obrestni meri (ang. \textit{\textbf{futures options}}) daje nosilcu pravico
+kupcu prodati ali od njega kupiti terminsko pogodbo po izvršilni ceni te pogodbe.
+
+Nakupna opcija daje nosilcu pravico zavzeti dolgo pozicijo v terminski pogodbi v osnovnem premoženju. Če se opcijo odloči izvršiti,
+kupec zavzame kratko pozicijo. Na podoben način deluje tudi prodajna opcija - če kupec izvrši opcijo, zavzame kratko pozicijo v terminski
+pogodbi. 
+
+Pojavi pa se vprašanje, kako določiti ceno terminski pogodbi. Ob izvršitvi opcije, je cena terminske pogodbe izenačena z izvršilno ceno.
+Cene se nato poravnajo s tržnimi in kupec opcije bo realiziral profit. V primeru nakupne opcije, mora kupec plačati razliko med trenutno
+ceno terminske pogodbe in izvršilno ceno, pri prodajni opciji pa razliko med izvršilno in trenutno ceno.
+
+Za lažje razumevanje, si oglejmo primer. Recimo, da investitor kupi nakupno opcijo na terminsko pogodbo o obrestni meri z izvršilno ceno
+85. Naj bo trenutna cena te pogodbe na trgu 95 in naj investitor opcijo izvrši. Nosilec zavzame dolgo pozicijo v pogodbi, prodajalec
+pa kratko. Ker je tržna cena pogodbe 95, izvršilna pa 85, ima investitor profit 10, prodajalec pa tako izgubo. Sedaj ima
+investitor terminsko pogodbo s tržno vrednostjo 95 in jo lahko likvidira (brez stroškov likvidacije) ali pa zadrži dolgo pozicijo v
+tej terminski pogodbi. Če jo likvidira, zasluži 95 in ima tako profit 10. Lahko pa zadrži pogodbo in tvega, da ji bo vrednost padla,
+vendar v vsakem primeru zasluži 10 iz izvršitve opcije.
+
+Oglejmo si sedaj še prodajno opcijo z izvršitveno ceno 85 in naj bo trenutna tržna cena pogodbe 60. Če se kupec odloči
+izvršiti prodajno opcijo, zavzame kratko pozicijo v terminski pogodbi z izvršilno ceno 85, prodajalec opcije pa dolgo. Ker je cena
+na trgu nižja kot izvršilna, prodajalec plača kupcu razliko med tema cenama, torej 25. Kupec opcije sedaj drži kratko pozicijo
+v terminski pogodbi s ceno 60 in ima zopet dve možnosti: svojo pozicijo lahko likvidira, torej kupi terminsko pogodbo s ceno 60, ali
+ohrani pozicijo. V vsakem primeru pa zasluži 25.
 
 
 \end{document}
