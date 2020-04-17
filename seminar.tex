@@ -21,11 +21,6 @@
 \maketitle
 
 \pagebreak
-
-\begin{abstract}
-
-\end{abstract}
-\pagebreak
 \tableofcontents
 \pagebreak
 
@@ -60,7 +55,8 @@ na devizne tečaje in obrestne mere.
 Po tem ko kupec opcije plača premijo, nima več obveznosti, le še pravice, prodajalec pa se mora držati dogovora - torej prodati
 oziroma kupiti premoženje, če se kupec za to odloči. Največ kar investitor lahko izgubi je premija,
 prodajalec pa lahko največ zasluži s prodajo opcije. Torej ima investitor možnost za potencialen profit,
-prodajalec pa potencialno tveganje za izgubo. \par
+prodajalec pa potencialno tveganje za izgubo.
+
 Pri trgovanju z opcijami lahko zavzamemo štiri pozicije:
 \begin{enumerate}
     \item Dolgo prodajno (nakup prodajne opcije)
@@ -73,8 +69,8 @@ Oglejmo si možnost izplačil opcij, če jih izvršimo na dan zapadlosti. Opcijo
 če je vrednost opcije v času izvršitve pozitivna. vrednost opcije je za nosilca razlika med ceno osnovnega premoženja in premijo.
 Če s $C_{t}$ označino vrednost nakupne opcije in s $P_{t}$ vrednost prodajne, je izplačilo enako:
 \begin{center}
-$C_{t}$ = max$\{$vrednost osnovnega premoženja - premija, 0$\}$ \\
-$P_{t}$ = max$\{$0, premija - vrednost osnovnega premoženja$\}$
+$C_{t} = max\{\text{vrednost osnovnega premoženja} - \text{premija}, 0\}$ \\
+$P_{t} = max\{0, \text{premija} - \text{vrednost osnovnega premoženja}\}$
 \end{center}
 Če je izplačilo pozitivno, se opcija splača (ang. \textit{in the money}), če je premija enaka vrednosti osnovnega premoženja
 je opcija na meji (ang. \textit{at the money}), in če je razlika manša od nič se opcija ne splača(ang. \textit{out of money}).
@@ -144,7 +140,17 @@ naložiti kritje, ki ga od njega zahteva terminska pogodba, na katero je opcija 
 Dodatno mora naložiti tudi ceno, ki jo je prejel za opcijo.
 
 \section{Opcije na prostem trgu}
+Investitorji, ki želijo kupiti opcijo na določeno državno obveznico ali posebno Ginnie Mae pogodbo(ang. \textit{mortgage-based security}
+terminska pogodba, ki jo financira posojilojemalec za nepremičnine skozi vladne agencije), lahko take opcije dobijo na prostem trgu.
+OTC opcije (ang. tudi \textit{dealer options}) se uporabljajo za ščitenje pred specifičnim tveganjem. Običajno opcija zapade istočasno
+kot pogodba, na katero je napisana, zato investitorju ni potrebno skrbeti glede likvidnosti.
 
+V trgovanju z OTC opcijami med kupcem in prodajalcem ni posrednika v obliki klirinške hiše. V primeru terminskih pogodb, sta tako
+obe strani izpostavljeni tveganju, da nasprotna stran ne bo mogla izplačati obveznosti (ang. \textit{counterparty risk}). Pri opcijah
+pa je (po plačani premiji) tveganju, da prodajalec ne bo mogel izplačati obveznosti, izpostavljen le kupec.
+
+Omejitev pri OTC opcijah ni - če se prodajalec lahko zaščiti pred tveganjem, ki ga prinaša potencialna izvršitev opcije, jo bo prodal.
+Tako te vrste opcije tudi niso omejene na ameriške ali evropske - pojavljajo se tudi modificirane ameriške, bermuda, \ldots.
 
 \section{Cena opcije}
 Na ceno opcije poglavitno vplivata dva faktorja: osnovna vrednost (ang. \textit{intrinsic value}) in časovna vrednost.
@@ -161,6 +167,17 @@ premijo za opcijo.
 
 Nakupna opcija, ki ima izvršilno ceno 100$\$$ in ceno 9$\$$ z osnovnim premoženjem v vrednosti 105$\$$, ima časovno vrednost 4$\$$,
 saj ima osnovno ceno 5$\$$. Če pa ima opcija izvršilno ceno 90$\$$, je njena časovna vrednost 9$\$$, saj je osnovna vrednost enaka nič.
+\pagebreak
+\subsection{Cena opcije na terminsko pogodbo o obrestni meri}
+Na ceno opcije na terminsko pogodbo o obrestni meri vpliva 5 faktorjev:
+\begin{enumerate}
+    \item trenutna tržna cena terminske pogodbe
+    \item izvršilna cena opcije
+    \item dolžina obdobja do zapadlosti
+    \item pričakovane spremembe v obrestnih merah do zapadlosti opcije
+    \item kratkoročne spremembe netveganih obrestnih mer
+\end{enumerate}
+
 
 
 \end{document}
