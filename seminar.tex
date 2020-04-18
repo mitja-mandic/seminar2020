@@ -104,12 +104,14 @@ Pri borznih opcijah osnovni kapital lahko predstavljajo tako instrumenti s fiksn
 kot terminske pogodbe o obrestni meri.
 
 \subsection{Opcije na borzi}
-V tem razdelku si bomo ogledali standardizirane opcije, s katerimi se trguje na borzi. Prevladujejo opcije na terminske pogodbe,
+V tem razdelku si bomo ogledali standardizirane opcije, s katerimi se trguje na borzi. Trguje se 
+tako z opcijami na instrumente s fiksnimi denarnimi tokovi (ang. \textit{fixed income securities}), 
+prevladujejo pa opcije na terminske pogodbe (ang. \textit{\textbf{futures options}}),
 zato bomo njim posvetili večino odseka, na koncu pa obrazložili, zakaj prevladujejo ravno te.
 
 \subsubsection{Opcije na terminsko pogodbo o obrestni meri}
 Opcije na terminske pogodbe obstajajo na vse terminske pogodbe omenjene v seminarski nalogi Tima Kalana z naslovom \textit{Terminske
-pogodbe o obrestni meri}. Opcija na terminsko pogodbo o obrestni meri (ang. \textit{\textbf{futures options}}) daje nosilcu pravico
+pogodbe o obrestni meri}. Opcija na terminsko pogodbo o obrestni meri  daje nosilcu pravico
 kupcu prodati ali od njega kupiti terminsko pogodbo po izvršilni ceni te pogodbe.
 
 Nakupna opcija daje nosilcu pravico zavzeti dolgo pozicijo v terminski pogodbi v osnovnem premoženju. Če se opcijo odloči izvršiti,
@@ -139,6 +141,21 @@ pa ne velja za prodajalca; ker se je odločil nositi celotno tveganje spreminjan
 naložiti kritje, ki ga od njega zahteva terminska pogodba, na katero je opcija napisana, ter to kritje obnavljati po potrebi.
 Dodatno mora naložiti tudi ceno, ki jo je prejel za opcijo.
 
+\subsubsection{Opcije na terminske pogodbe vs. na fiksne denarne tokove}
+Na organiziranem trgu so opcije na terminske pogodbe o obrestni meri v večinski meri izpodrinile opcije na instrumente s fiksnim
+denarnim tokom. Za to so trije razlogi. Prvič, opcije na terminske pogodbe ne zahtevajo plačil natečenih obresti in jih ob izvršitvi kupcu
+nakupne ali prodajalcu prodajne opcije ni potrebno izplačati.
+
+Drugič, stran, ki more instrument izročiti, tvega, da bo ob izvršitv
+opcije na trgu pomanjkanje, kar dvigne ceno temu instrumentu. Ker je za trenutne terminske pogodbe na obrestno mero zaloga neskončna,
+ni strahu pred naraščanjem cen. 
+
+In tretjič, za določanje cen katerekoli opcije, je pomembno poznati vrednost osnovnega premoženja.
+Trenutne cene obveznic je običajno težje dobiti kot trenutne cene terminskih pogodb, saj se z obveznicami trguje na prostem trgu, kjer
+se cen ne poroča osrednji bazi podatkov. Investitor, ki želi kupiti opcijo na državno obveznico bi torej moral poklicati več trgovcev, 
+da bi si ustvaril jasnejšo sliko o ceni opcije. Nasprotno pa se s terminskimi pogodbami trguje na organiziranem trgu in so zato vsi 
+podatki o cenah zbrani na enem mestu. 
+
 \section{Opcije na prostem trgu}
 Investitorji, ki želijo kupiti opcijo na določeno državno obveznico ali posebno Ginnie Mae pogodbo(ang. \textit{mortgage-based security}
 terminska pogodba, ki jo financira posojilojemalec za nepremičnine skozi vladne agencije), lahko take opcije dobijo na prostem trgu.
@@ -153,9 +170,9 @@ Omejitev pri OTC opcijah ni - če se prodajalec lahko zaščiti pred tveganjem, 
 Tako te vrste opcije tudi niso omejene na ameriške ali evropske - pojavljajo se tudi modificirane ameriške, bermuda, \ldots.
 
 \section{Cena opcije}
-Na ceno opcije poglavitno vplivata dva faktorja: osnovna vrednost (ang. \textit{intrinsic value}) in časovna vrednost.
+Na ceno opcije poglavitno vplivata dva faktorja: osnovna vrednost (ang. \textit{intrinsic value}) in časovna vrednost(ang. \textit{time value}).
 
-\textbf{Osnovna vrednost} je ekonomska vrednost, če opcijo takoj izvršimo. Ta je enaka nič, če je ekonomska vrednost manjša ali enaka nič.
+\textbf{Osnovna vrednost} je vrednost, ki jo dobimo, če opcijo takoj izvršimo. Ta je enaka nič, če je ekonomska vrednost manjša ali enaka nič.
 Za nakupno opcijo je osnovna vrednost pozitivna, če je razlika med tržno vrednostjo osnovnega premoženja in izvršilno ceno večja od nič.
 
 Na primer, če je cena izvršilna cena opcije 100$\$$ in je tržna vrednost osnovnega premoženja 105$\$$, je osnovna vrednost 5$\$$. 
@@ -167,17 +184,48 @@ premijo za opcijo.
 
 Nakupna opcija, ki ima izvršilno ceno 100$\$$ in ceno 9$\$$ z osnovnim premoženjem v vrednosti 105$\$$, ima časovno vrednost 4$\$$,
 saj ima osnovno ceno 5$\$$. Če pa ima opcija izvršilno ceno 90$\$$, je njena časovna vrednost 9$\$$, saj je osnovna vrednost enaka nič.
-\pagebreak
-\subsection{Cena opcije na terminsko pogodbo o obrestni meri}
-Na ceno opcije na terminsko pogodbo o obrestni meri vpliva 5 faktorjev:
+
+\subsection{Vplivi na ceno opcije}
+Na ceno opcije vpliva 6 dejavnikov:
 \begin{enumerate}
-    \item trenutna tržna cena terminske pogodbe
+    \item trenutna tržna cena osnovnega premoženja
     \item izvršilna cena opcije
     \item dolžina obdobja do zapadlosti
     \item pričakovane spremembe v obrestnih merah do zapadlosti opcije
     \item kratkoročne spremembe netveganih obrestnih mer
+    \item kuponska izplačila do zapadlosti opcije
 \end{enumerate}
+V sledečem razdelku bomo obravnavali zgoraj navedene vplive na ceno opcije, pri tem pa predpostavili, da so vsi ostali
+dejavniki nespremenjeni.
 
+\textbf{Trenutna tržna cena osnovnega premoženja} vpliva na ceno opcije. V primeru nakupne opcije, se ob dvigu cene osnovnega premoženja
+dvigne tudi cena opcije. Razlog za to je dvig osnovne vrednosti, ki raste z dvigom cen osnovnega premoženja. Obratno velja za prodajne
+opcije - ob dvigu cene osnovnega premoženja, pade osnovna vrednost in posledično tudi cena opcije.
 
+Nižja kot je \textbf{izvršilna cena terminske pogodbe}, višja je cena nakupne opcije. Za prodajne opcije pa velja: višja kot je cena 
+osnovnega premoženja, višja je cena opcije
+
+Daljši kot je \textbf{čas do zapadlosti}, višja je cena opcije. Za opcijo velja, da ko preteče datum zapadlosti, izgubi svojo vrednost.
+Bliže kot smo temu datumu, manj je časa, da vrednost osnovnega premoženja zraste (za kupca prodajne opcije) in pade (za kupca nakupne) ---
+za kompenzacijo časovne vrednosti kupcu --- in zato verjetnost željene spremembe cene pade. Posledično se cena ameriške opcije bliža njeni
+osnovni vrednosti, ko se bližamo dnevu zapadlosti.
+
+Večje kot so \textbf{pričakovane spremembe obrestnih mer}, več prodajalec zahteva za opcijo in tudi investitor je pripravljen
+zanjo plačati več. To je, ker z večjo volatilnostjo obrestnih mer raste tudi verjetnost, da se bo cena osnovnega premoženja premaknila
+v smer, ki jo želi kupec. Metode za oceno sprememb obrestnih mer pa je v svoji nalogi predstavila Anja Trobec.
+
+Oglejmo si še spremembe v \textbf{kratkoročnih netveganih obrestnih merah}. Nakup opcije na osnovno premoženje 
+je za investitorja privlačnejše, kot nakup osnovnega premoženja, saj je tako razlika med ceno 
+premoženja in ceno opcije pri netvegani obrestni meri na voljo za ponovno investicijo. Višja kot je kratkoročna netvegana 
+obrestna mera, višja je cena osnovnega premoženja in zato nakupna opcija privlačnejša. Posledično je tudi cena nakupne opcije, pri 
+višji kratkotrajni netvegani obrestni meri višja. V primeru prodajne opcije, pa je alternativa nakupu take opcije kratka prodaja
+osnovnega premoženja. Profit iz kratke prodaje lahko nato znova investiramo po kratkoročni netvegani obrestni meri. Ko se le-ta poveča,
+je kratka prodaja osnovnega premoženja privlačnejša kot nakup prodajne opcije, zato cena te pade.
+
+\textbf{Kuponska izplačila} osnovnega premoženja nižajo ceno nakupni opciji saj je privlačneje imeti to premoženje, kot nakupno 
+opcijo nanj (v primeru nakupne opcije, kuponov ne prejemamo). Višja kot so kuponska izplačila osnovnega premoženja, nižja je cena
+nakupne opcije nanj. Nasprotno pa velja za prodajne opcije. Nakup take opcije primerjamo s kratko prodajo osnovnega premoženja;
+višji kot so kuponi, več moramo izplačevati. Višji kot so kuponi, bolj privlačno je kupiti prodajno opcijo kot kratko prodati osnovno
+premoženje in zato cena prodajni opciji naraste.
 
 \end{document}
