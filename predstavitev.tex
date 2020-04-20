@@ -2,15 +2,22 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[slovene]{babel}
-\usepackage{pgfpages}
-\mode<presentation>
+\usepackage{pgfpages} % privat zapiski
+\usepackage{amsmath} % pravilen izpis v "math mode"
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
 \usepackage{palatino}
-%\usetheme{Goettingen}
 \usefonttheme{serif}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]{}
+
+\setbeamertemplate{navigation symbols}{} % izklop navigacije
+\setbeamertemplate{footline}[frame number]{} % oštevilčenje
+\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}
 \setbeamertemplate{itemize items}[circle]
 
+%\setbeameroption{hide notes}                        % samo prosojnice
+%\setbeameroption{show only notes}                   % samo zapiski
+%\setbeameroption{show notes on second screen=right}  % oboje
 
 \begin{document}
 \title{Opcije na obrestne mere \\ \textit{Interest Rate Options}}
@@ -32,12 +39,13 @@
         \item Opcije so izveden finančni instrument, kjer kupec dobi pravico, da od prodajalca opcije kupi 
         ali mu proda osnovno premoženje
         \item Glede na možnost izvedbe poznamo tri osnovne skupine opcij:
+        \pause
         \begin{itemize}
             \item evropske
             \pause
             \item ameriške
             \pause
-            \item modificirane ameriške
+            \item eksotične (modificirane ameriške, bermuda,\ldots)
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -50,16 +58,16 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Trgovanje z opcijami}
-    V trgovanju z opcijami lahko zavzamemo štiri pozicije:
-    \begin{itemize}
-        \item Dolgo nakupno
-        \item Kratko nakupno
-        \item Dolgo prodajno
-        \item Kratko prodajno
-    \end{itemize}
-\end{frame}
+%\begin{frame}
+%    \frametitle{Trgovanje z opcijami}
+%    V trgovanju z opcijami lahko zavzamemo štiri pozicije:
+%    \begin{itemize}
+%        \item Dolgo nakupno
+%        \item Kratko nakupno
+%        \item Dolgo prodajno
+%        \item Kratko prodajno
+%    \end{itemize}
+%\end{frame}
 
 \begin{frame}
     \frametitle{Razlika med opcijami in terminskimi pogodbami}
@@ -98,9 +106,18 @@
             \item Naj bo trenutna tržna cena te terminske pogodbe 95\textdollar, opcijo izvršimo
             \item Sedaj držimo dolgo pozicijo v terminski pogodbi s tržno ceno 95\textdollar, za katero smo plačali 85\textdollar
         \end{itemize}
-    \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Zakaj opcije na terminske pogodbe?}
+    Trije glavni razlogi za prevlado opcij na terminske pogodbe:
+    \begin{enumerate}
+        \item ni potrebno plačevati natečenih obrestni
+        \item ni strahu pred pomanjkanjem terminskih pogodb in rastjo cen
+        \item terminski pogodbi je lažje določiti ceno
+    \end{enumerate}
+\end{frame}
+        
 \begin{frame}    
     \frametitle{Opcije na prostem trgu}
     \begin{itemize}
@@ -110,5 +127,39 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Vplivi na ceno opcij}
+    \begin{itemize}
+        \item Osnovna vrednost (\textit{intrinsic value})
+        \begin{itemize}
+            \item \textit{$ \text{vrednost osnovnega premoženja} - \text{izvršilna cena opcije} $}
+        \end{itemize}
+        \pause
+            \item Časovna vrednost (\textit{time value})
+            \begin{itemize}
+                \item max$\{\textit{\text{cena opcije} - \text{osnovna vrednost}},0 \}$
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vplivi na ceno borznih opcij}
+        \begin{enumerate}
+            \item trenutna tržna cena osnovnega premoženja
+            \item izvršilna cena opcije
+            \item dolžina obdobja do zapadlosti
+            \item pričakovane spremembe v obrestnih merah do zapadlosti opcije
+            \item kratkoročne spremembe netveganih obrestnih mer
+            \item kuponska izplačila do zapadlosti opcije
+        \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Cena opcij na terminsko pogodbo}
+    \begin{itemize}
+        \item Cena opcije se navaja v 64-inah procenta nominalne vrednosti terminske pogodbe
+        \item Cena 24 torej pomeni: $\frac{24/64}{100}\times 100.000\$ = 375\$$
+    \end{itemize}
+\end{frame}
 
 \end{document}

@@ -17,9 +17,10 @@
 \date{25.\ marec\ 2020}
 
 \begin{document}
-
-\maketitle
-
+\begin{titlepage}
+    \maketitle
+    \thispagestyle{empty}
+\end{titlepage}
 \pagebreak
 \tableofcontents
 \pagebreak
@@ -33,8 +34,8 @@ stiskalnice po precej višji ceni kot je plačal za najem stiskalnic.
 \section{Na splošno o opcijah}
 
 Opcija je pogodba, v kateri prodajalec (ang. \textit{writer}) kupcu (tudi nosilcu) zagotovi pravico, 
-vendar ne obveze, da bo od nosilca kupil (ang. \textit{put option})
-ali mu prodal (ang. \textit{call option}) osnovno premoženje (ang. \textit{the underlying}) do 
+vendar ne obveze, da bo od nosilca kupil (ang. \textit{\textbf{put option}})
+ali mu prodal (ang. \textit{\textbf{call option}}) osnovno premoženje (ang. \textit{the underlying}) do 
 vključno vnaprej dogovorjenega datuma (\textit{expiration date}).
 Po tem opcija zapade.  V tej nalogi se bomo osredotičili na opcije, kjer je
 osnovno premoženje obrestna mera ali obrestni instrument. Prodajalec v zameno dobi določeno vsoto denarja, ki jo imenujemo premija, 
@@ -46,7 +47,7 @@ Glede na možnost izvršitve pogodbe ločimo:
     \item eksotične opcije - izvršitev je možna na določene datume (atlantske, bermuda, \ldots)
 \end{itemize}
 
-Ameriške opcije imajo višjo ceno kot evropske, saj ponujajo tudi več možnosti. Drugače bi to pomenilo arbitražo.
+Ameriške opcije imajo višjo ceno kot evropske, saj ponujajo tudi več možnosti. Sicer bi to pomenilo arbitražo.
 Z opcijami se trguje tako na organiziranem trgu (borze), kot tudi na prostem trgu (ang. \textit{over-the-counter}). Na borzah so
 standardizirane in se trguje predvsem z opcijami na delnice, terminske pogodbe in blago, medtem ko se na prostem trgu trguje z opcijami
 na devizne tečaje in obrestne mere.
@@ -146,9 +147,8 @@ Na organiziranem trgu so opcije na terminske pogodbe o obrestni meri v večinski
 denarnim tokom. Za to so trije razlogi. Prvič, opcije na terminske pogodbe ne zahtevajo plačil natečenih obresti in jih ob izvršitvi kupcu
 nakupne ali prodajalcu prodajne opcije ni potrebno izplačati.
 
-Drugič, stran, ki more instrument izročiti, tvega, da bo ob izvršitv
-opcije na trgu pomanjkanje, kar dvigne ceno temu instrumentu. Ker je za trenutne terminske pogodbe na obrestno mero zaloga neskončna,
-ni strahu pred naraščanjem cen. 
+Drugič, stran, ki more instrument izročiti, tvega, da bo ob izvršitv opcije na trgu pomanjkanje, kar dvigne ceno temu instrumentu.
+Ker je za trenutne terminske pogodbe na obrestno mero zaloga neskončna, ni strahu pred naraščanjem cen. 
 
 In tretjič, za določanje cen katerekoli opcije, je pomembno poznati vrednost osnovnega premoženja.
 Trenutne cene obveznic je običajno težje dobiti kot trenutne cene terminskih pogodb, saj se z obveznicami trguje na prostem trgu, kjer
@@ -156,7 +156,7 @@ se cen ne poroča osrednji bazi podatkov. Investitor, ki želi kupiti opcijo na 
 da bi si ustvaril jasnejšo sliko o ceni opcije. Nasprotno pa se s terminskimi pogodbami trguje na organiziranem trgu in so zato vsi 
 podatki o cenah zbrani na enem mestu. 
 
-\section{Opcije na prostem trgu}
+\subsection{Opcije na prostem trgu}
 Investitorji, ki želijo kupiti opcijo na določeno državno obveznico ali posebno Ginnie Mae pogodbo(ang. \textit{mortgage-based security}
 terminska pogodba, ki jo financira posojilojemalec za nepremičnine skozi vladne agencije), lahko take opcije dobijo na prostem trgu.
 OTC opcije (ang. tudi \textit{dealer options}) se uporabljajo za ščitenje pred specifičnim tveganjem. Običajno opcija zapade istočasno
@@ -228,4 +228,11 @@ nakupne opcije nanj. Nasprotno pa velja za prodajne opcije. Nakup take opcije pr
 višji kot so kuponi, več moramo izplačevati. Višji kot so kuponi, bolj privlačno je kupiti prodajno opcijo kot kratko prodati osnovno
 premoženje in zato cena prodajni opciji naraste.
 
+\subsection{Cena opcije na terminsko pogodbo}
+Cena opcije na terminsko pogodbo je izražena v 64-inah procenta nominalne cene terminske pogodbe. Torej cena 24 pomeni 24/64
+1\% nominalne cene. Ker je nominalna cena terminske pogodbe na državno obveznico 100.000\textdollar, cena 24 pomeni:
+\(\frac{24/64}{100} \times 100.000\$ = 375\$\). V splošnem je cena opcije na terminsko pogodbo, ki kotira kot \textit{Q}:
+\begin{center}
+    Cena opcije $ = \frac{\textit{\text{Q}}/64}{100} \times 100.000\$$
+\end{center}
 \end{document}
