@@ -7,6 +7,10 @@
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 
+
+\usepackage{graphicx}% http://ctan.org/pkg/graphicx
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+
 \usepackage{palatino}
 \usefonttheme{serif}
 
@@ -18,7 +22,7 @@
 %\setbeameroption{hide notes}                        % samo prosojnice
 %\setbeameroption{show only notes}                   % samo zapiski
 %\setbeameroption{show notes on second screen=right}  % oboje
-
+ 
 \begin{document}
 \title{Opcije na obrestne mere \\ \textit{Interest Rate Options}}
 \author{Mitja Mandić}
@@ -36,7 +40,7 @@
 \begin{frame}
     \frametitle{Na splošno o opcijah}
     \begin{itemize}
-        \item Opcije so izveden finančni instrument, kjer kupec dobi pravico, da od prodajalca opcije kupi 
+        \item Kupec dobi \textbf{pravico}, da od prodajalca kupi 
         ali mu proda osnovno premoženje
         \item Glede na možnost izvedbe poznamo tri osnovne skupine opcij:
         \pause
@@ -53,30 +57,18 @@
 \begin{frame}
     \frametitle{Trgovanje z opcijami}
     \begin{itemize}
+        \item Nakupne in prodajne opcije
         \item Ko nosilec plača premijo prodajalcu, nima več obveznosti, le še pravice
         \item Nosilec lahko izgubi največ premijo, prodajalec pa lahko največ toliko profitira
     \end{itemize}
 \end{frame}
-
-%\begin{frame}
-%    \frametitle{Trgovanje z opcijami}
-%    V trgovanju z opcijami lahko zavzamemo štiri pozicije:
-%    \begin{itemize}
-%        \item Dolgo nakupno
-%        \item Kratko nakupno
-%        \item Dolgo prodajno
-%        \item Kratko prodajno
-%    \end{itemize}
-%\end{frame}
 
 \begin{frame}
     \frametitle{Razlika med opcijami in terminskimi pogodbami}
     \begin{itemize}
         \item Nosilcu opcije po plačilu premije ni potrebno več reagirati
         \item Prodajalec opcije pa se mora ravnati po željah kupca - tu je kupec izpostavljen tveganju
-        \pause
         \item Drugačna shema tveganja in zaslužka
-        \pause
         \item Za nosilca ni potrebe po kritju, prodajalec pa kritje mora vzdrževati
     \end{itemize}
 \end{frame}
@@ -91,15 +83,16 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Opcije na reguliranem trgu - opcije na terminsko pogodbo o obrestni meri}
+    \frametitle{Opcije na terminske pogodbe o obrestni meri}
     \begin{itemize}
+        \item Osnovno premoženje je terminska pogodba o obrestni meri (\textit{futures option})
         \item Nakupna opcija daje nosilcu pravico zavzeti dolgo pozicijo, prodajna pa kratko
         \item Cena terminske pogodbe je ob izvršitvi poravnana z izvršilno, nato pa se preveri tržno ceno
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Opcije na reguliranem trgu, 2. del}
+    \frametitle{Opcije na terminske pogodbe o obrestni meri, 2. del}
         \begin{itemize}
             \item Oglejmo si naslednji zgled:
             \item Kupimo nakupno opcijo, terminska pogodba ima izvršilno ceno 85\textdollar
@@ -112,7 +105,7 @@
     \frametitle{Zakaj opcije na terminske pogodbe?}
     Trije glavni razlogi za prevlado opcij na terminske pogodbe:
     \begin{enumerate}
-        \item ni potrebno plačevati natečenih obrestni
+        \item ni potrebno plačevati natečenih obresti
         \item ni strahu pred pomanjkanjem terminskih pogodb in rastjo cen
         \item terminski pogodbi je lažje določiti ceno
     \end{enumerate}
@@ -122,37 +115,65 @@
     \frametitle{Opcije na prostem trgu}
     \begin{itemize}
         \item Z OTC opcijami trgujejo investitorji, ki se želijo zaščititi pred specifičnimi tveganji
-        \item Ginnie Mae opcije, posebne državne menice,\ldots
+        \item Opcije na Ginnie Mae obveznice, posebne državne menice, \ldots
         \item Kupec tvega, da prodajalec ne bo mogel izplačati obveznosti
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vplivi na ceno opcij}
+    \frametitle{Cena opcij}
     \begin{itemize}
         \item Osnovna vrednost (\textit{intrinsic value})
         \begin{itemize}
-            \item \textit{$ \text{vrednost osnovnega premoženja} - \text{izvršilna cena opcije} $}
+            \item $C_{t} = max\{\text{\textit{vrednost osnovnega premoženja}} - \text{\textit{izvršilna cena}}, 0\}$
+            \item $P_{t} = max\{0, \text{\textit{izvršilna cena}} - \text{\textit{vrednost osnovnega premoženja}}\}$
         \end{itemize}
         \pause
             \item Časovna vrednost (\textit{time value})
             \begin{itemize}
-                \item max$\{\textit{\text{cena opcije} - \text{osnovna vrednost}},0 \}$
+                \item $max\{\textit{\text{cena opcije} - \text{osnovna vrednost}},0 \}$
+                \item Če je izvršilna cena nakupne opcije 100\textdollar, tržna cena premoženja 105\textdollar, cena opcije 9\textdollar, je njena časovna vrednost 4\textdollar
             \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vplivi na ceno borznih opcij}
-        \begin{enumerate}
-            \item trenutna tržna cena osnovnega premoženja
-            \item izvršilna cena opcije
-            \item dolžina obdobja do zapadlosti
-            \item pričakovane spremembe v obrestnih merah do zapadlosti opcije
-            \item kratkoročne spremembe netveganih obrestnih mer
-            \item kuponska izplačila do zapadlosti opcije
-        \end{enumerate}
+    \frametitle{Cena opcij}
+        \resizebox{\linewidth}{!}{
+        \begin{tabular} { c | c | c }
+        
+        & Nakupna & Prodajna \\
+        \hline\hline
+         Tržna cena > izvršilna cena & Tržna - Izvršilna & 0  \\ 
+         & \textit{in-the-money} & \textit{out-of-the-money} \\
+         \hline
+         Tržna cena < izvršilna cena & 0 & Izvršilna - Tržna \\ 
+         & \textit{out-of-the-money} &\textit{in-the-money}\\ 
+         \hline
+         Tržna cena = izvršilna cena & 0 & 0 \\
+         & \textit{at-the-money} &  \textit{at-the-money}   
+        
+        
+    \end{tabular}}
+       
 \end{frame}
+
+%\begin{frame}
+%\frametitle{Vplivi na ceno opcij}
+%\resizebox{\linewidth}{!}{
+%\begin{tabular}{l|c|c}
+%    
+%    Dejavnik & Nakupna opcija & Prodajna opcija \\
+%    \hline\hline
+%    Cena osnovnega premoženja & poveča & zmanjša \\
+%    Izvršilna cena & zmanjša & poveča \\
+%    Čas do zapadlosti & poveča & poveča \\
+%    Pričakovane spremembe obrestnih mer & poveča & poveča \\
+%    Kratkoročne netvegane obrestne mere & poveča & zmanjša \\
+%    Kuponi & zmanjša & poveča
+%
+%\end{tabular}}
+%\end{frame}
 
 \begin{frame}
     \frametitle{Cena opcij na terminsko pogodbo}
@@ -162,4 +183,37 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Kje se s takimi opcijami trguje?}
+        \begin{itemize}
+            \item \textit{Chicago Merchentile Exchange}:
+                \begin{itemize}
+                    \item Eurodollar opcije, ameriške državne obveznice, \ldots
+                    \item lani 2.76 milijona pogodb na dan
+                \end{itemize}
+            \item \textit{NYSE Liffe}:
+                \begin{itemize}
+                    \item opcije se prodajajo kot terminski posli
+                    \item kupec in prodajalec dnevno nalagata kritje
+                    \item Euribor, britanski funt
+                \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Viri}
+    \begin{itemize} 
+        \item Frank. J. Fabozzi: \textit{Fixed Income Analysis}, John Wiley \& Sons $2$. izdaja, 2007
+        \item Investopedia: \textit{Interest Rate Options} (leto ogleda: $2020$), \\
+                dostopno na: \url{https://www.investopedia.com/terms/i/interestrateoptions.asp}
+        \item thisMatter: \textit{Interest Rate Options} (leto ogleda: $2020$), \\
+                dostopno na: \url{https://thismatter.com/money/options/interest-rate-options.htm}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{itemize}
+        \item CME Group: \textit{Interest Rate Options}, (leto ogleda $2020$), \\
+        dostopno na: \url{https://www.cmegroup.com/trading/interest-rates/options.html}
+    \end{itemize}
+\end{frame}
 \end{document}
