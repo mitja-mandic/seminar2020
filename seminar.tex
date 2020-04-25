@@ -68,41 +68,16 @@ Pri trgovanju z opcijami lahko zavzamemo štiri pozicije:
     \item Dolgo nakupno (nakup nakupne opcije)
     \item Kratko nakupno (prodaja nakupne opcije)
 \end{enumerate}
-Oglejmo si možnost izplačil opcij, če jih izvršimo na dan zapadlosti. Opcijo nosilec izvrši, če ima od tega profit, torej
-če je notranja vrednost opcije v času izvršitve pozitivna. vrednost opcije je za nosilca razlika med ceno osnovnega premoženja in premijo.
-Če s $C_{t}$ označino vrednost nakupne opcije in s $P_{t}$ vrednost prodajne, je izplačilo enako:
-\begin{center}
-$C_{t} = max\{\text{vrednost osnovnega premoženja} - \text{premija}, 0\}$ \\
-$P_{t} = max\{0, \text{premija} - \text{vrednost osnovnega premoženja}\}$
-\end{center}
-Če je izplačilo pozitivno, se opcija splača (ang. \textit{in-the-money}), če je premija enaka vrednosti osnovnega premoženja
-je opcija na meji (ang. \textit{at-the-money}), in če je razlika manša od nič se opcija ne splača (ang. \textit{out-of-the-money}).
-
-\begin{table}[h]
-    \centering
-    \begin{tabular} { c | c | c }
-        \toprule
-        & Nakupna opcija & Prodajna opcija \\
-        \hline
-        \textbf{Tržna cena > izvršilna cena} & \textbf{Tržna - Izvršilna} & \textbf{0}  \\
-        \hline
-        & opcija se splača & opcija se ne splača \\ 
-        & \textit{in-the-money} & \textit{out-of-the-money} \\
-        \hline
-        \textbf{Tržna cena < izvršilna cena} &\textbf{0} & \textbf{Izvršilna - Tržna} \\
-        \hline
-        & opcija se ne splača & opcija se splača \\
-        & \textit{out-of-the-money} &\textit{in-the-money}\\ 
-        \hline
-        \textbf{Tržna cena = izvršilna cena} & \textbf{0} & \textbf{0} \\
-        \hline
-        & opcija je na meji & opcija je na meji \\
-        & \textit{at-the-money} &  \textit{at-the-money} \\  
-        \bottomrule
-    \end{tabular}
-    \caption{Pregled izrazov}
-\end{table}
-Izplačilom in vplivom na ceno opcije se podrobneje posvetimo v poglavju \ref{cenaopcij}.
+%%Oglejmo si možnost izplačil opcij, če jih izvršimo v nekem trenutku. Opcijo nosilec izvrši, če ima od tega profit, torej
+%%če je notranja vrednost opcije v času izvršitve pozitivna. Vrednost opcije je za nosilca razlika med vrednostjo osnovnega premoženja in izvršilno ceno.
+%%Če s $C_{t}$ označino notranjo vrednost nakupne opcije in s $P_{t}$ notranjo vrednost prodajne, je izplačilo enako:
+%%\begin{center}
+%%$C_{t} = max\{\text{vrednost osnovnega premoženja} - \text{premija}, 0\}$ \\
+%%$P_{t} = max\{0, \text{premija} - \text{vrednost osnovnega premoženja}\}$
+%%\end{center}
+%Če je izplačilo pozitivno, se opcija splača (ang. \textit{in-the-money}), če je premija enaka vrednosti osnovnega premoženja
+%je opcija na meji (ang. \textit{at-the-money}), in če je razlika manša od nič se opcija ne splača (ang. \textit{out-of-the-money}).
+%Izplačilom in vplivom na ceno opcije se podrobneje posvetimo v poglavju \ref{cenaopcij}.
 
 \section{Razlike med opcijami in terminskimi pogodbami}
 Glavna razlika med terminskimi pogodbami in opcijami je, da opcije nosilcu ni potrebno izvršiti. Kupec ima pravico,
@@ -160,12 +135,12 @@ vendar v vsakem primeru zasluži \textdollar$10$ iz izvršitve opcije.
 
 Oglejmo si sedaj še prodajno opcijo z izvršitveno ceno \textdollar$85$ in naj bo trenutna tržna cena pogodbe v osnovnem premoženju \textdollar$60$. Če se kupec odloči
 izvršiti prodajno opcijo, zavzame kratko pozicijo v terminski pogodbi z izvršilno ceno \textdollar$85$, prodajalec opcije pa dolgo. Ker je cena
-na trgu nižja kot izvršilna, prodajalec plača kupcu razliko med tema cenama, torej \textdollar$25$. Kupec opcije sedaj drži kratko pozicijo
+na trgu nižja kot izvršilna, prodajalec plača kupcu razliko med cenama, torej \textdollar$25$. Kupec opcije sedaj drži kratko pozicijo
 v terminski pogodbi s ceno 60 in ima zopet dve možnosti: svojo pozicijo lahko likvidira, torej kupi terminsko pogodbo s ceno \textdollar$60$, ali
 ohrani pozicijo. V vsakem primeru pa zasluži \textdollar$25$.
 
 \subsubsection{Kritje}
-Kupcu opcije kritja na vzdrževalni račun ni potrebno nalagati, saj po plačilu cene opcije ne more izgubiti ničesar več. Za prodajalca pa to
+Kupcu opcije kritja na vzdrževalni račun ni potrebno nalagati, saj po plačilu premije ne more izgubiti ničesar več. Za prodajalca pa to
 ne velja. Ker je v zameno za premijo sprejel tveganje spremembe vrednosti osnovnega premoženja, mora na svoj vzdrževalni račun
 naložiti kritje, ki ga mora sproti vzdrževati. To je sestavljeno iz vrednosti, ki jo zahteva terminska pogodba ter pogosto tudi premija.
 
@@ -174,20 +149,20 @@ Na organiziranem trgu so opcije na terminske pogodbe o obrestni meri v večinski
 denarnim tokom. Za to obstajajo trije razlogi: prvič, opcije na terminske pogodbe ne zahtevajo plačil natečenih obresti in jih ob izvršitvi kupcu
 nakupne ali prodajalcu prodajne opcije ni potrebno izplačati.
 
-Drugič, stran, ki more instrument izročiti, tvega, da bo ob izvršitv opcije na trgu pomanjkanje, kar dvigne ceno temu instrumentu (ang. \textit{delivery squeeze}).
-Ker je za trenutne terminske pogodbe na obrestno mero zaloga neskončna, ni strahu pred naraščanjem cen. 
+Drugič, stran, ki mora instrument izročiti, tvega, da bo ob izvršitvi opcije na trgu pomanjkanje instrumenta, kar mu dvigne ceno (ang. \textit{delivery squeeze}).
+Ker je za trenutne terminske pogodbe na obrestno mero zaloga praktično neskončna, ni strahu pred naraščanjem cen. 
 
 In tretjič, če želimo določiti ceno opciji, je pomembno poznati vrednost osnovnega premoženja.
-Trenutne cene obveznic je običajno težje dobiti kot trenutne cene terminskih pogodb, saj se z obveznicamiv velikem delu trguje na prostem trgu, kjer
-se cen ne poroča osrednji bazi podatkov. Investitor, ki želi kupiti opcijo na državno obveznico bi torej moral poklicati več trgovcev, 
-da bi si ustvaril jasnejšo sliko o njeni ceni ter določil ceno opcije. Nasprotno pa se s terminskimi pogodbami trguje na organiziranem trgu in so zato vsi 
+Trenutne cene obveznic je običajno težje dobiti kot trenutne cene terminskih pogodb, saj se z obveznicami v veliki meri trguje na prostem trgu, kjer
+se cen ne poroča osrednji bazi podatkov. Investitor, ki želi kupiti opcijo na državno obveznico bi torej moral kontaktirati več trgovcev, 
+da bi si ustvaril jasnejšo sliko o njeni ceni ter določil ceno opcije. Nasprotno pa se s terminskimi pogodbami večinoma trguje na organiziranem trgu in so zato vsi 
 podatki o cenah zbrani na enem mestu. 
 
 \subsection{Opcije na prostem trgu}
-Investitorji, ki želijo kupiti opcijo na določeno državno obveznico ali posebno Ginnie Mae pogodbo(ang. \textit{mortgage-based security}
-terminska pogodba, ki jo financira posojilojemalec za nepremičnine skozi vladne agencije), lahko take opcije dobijo na prostem trgu.
-OTC opcije (ang. tudi \textit{dealer options}) se uporabljajo za ščitenje pred specifičnim tveganjem. Običajno opcija zapade istočasno
-kot pogodba, na katero je napisana, zato investitorju ni potrebno skrbeti glede likvidnosti.
+Investitorji, ki želijo kupiti opcijo na določeno državno obveznico, Ginnie Mae obveznico (ang. \textit{mortgage-based security} oziroma širše \textit{pass-through security};
+obveznica, ki jo financirajo posojilojemalci skozi posrednike, ki odplačujejo kredite za hiše, avtomobile, \ldots), lahko take opcije dobijo na prostem trgu.
+OTC opcije (ang. tudi \textit{dealer options}) se uporabljajo za ščitenje pred specifičnim tveganjem. Običajno se obdobje do zapadlosti opcije prekriva z obdobjem 
+ko investitor potrebuje zaščito in ga zato likvidnost opcije ne skrbi.
 
 V trgovanju z OTC opcijami med kupcem in prodajalcem ni posrednika v obliki klirinške hiše. V primeru terminskih pogodb, sta tako
 obe strani izpostavljeni tveganju, da nasprotna stran ne bo mogla izplačati obveznosti (ang. \textit{counterparty risk}). Pri opcijah
@@ -196,14 +171,48 @@ pa je (po plačani premiji) tveganju, da prodajalec ne bo mogel izplačati obvez
 Omejitev pri OTC opcijah ni - če se prodajalec lahko zaščiti pred tveganjem, ki ga prinaša potencialna izvršitev opcije, jo bo prodal.
 Tako te vrste opcije tudi niso omejene na ameriške ali evropske - pojavljajo se tudi modificirane ameriške, bermuda, \ldots.
 
-\section{Cena opcije} \label{cenaopcij}
-Na ceno opcije poglavitno vplivata dva faktorja: notranja vrednost (ang. \textit{intrinsic value}) in časovna vrednost(ang. \textit{time value}).
+\section{Cena opcij} \label{cenaopcij}
+Na ceno opcij poglavitno vplivata dva faktorja: notranja vrednost (ang. \textit{intrinsic value}) in časovna vrednost(ang. \textit{time value}).
 
-\textbf{Notranja vrednost} je vrednost, ki jo dobimo, če opcijo takoj izvršimo. Ta je enaka nič, če je ekonomska vrednost manjša ali enaka nič.
-Za nakupno opcijo je notranja vrednost pozitivna, če je razlika med tržno vrednostjo osnovnega premoženja in izvršilno ceno večja od nič.
+\textbf{Notranja vrednost} je zaslužek, ki ga realiziramo, če opcijo v danem trenutku izvršimo.
+Za nakupno opcijo je notranja vrednost pozitivna, če je razlika med tržno vrednostjo osnovnega premoženja in izvršilno ceno večja od nič. Za prodajno
+pa razlika med izvršilno ceno in vrednostjo osnovnega premoženja.
+\begin{center}
+    $\text{Nakupna opcija} = max\{\text{vrednost osnovnega premoženja} - \text{izvršilna cena}, 0\}$ \\
+    $\text{Prodajna opcija} = max\{0, \text{izvršilna cena} - \text{vrednost osnovnega premoženja}\}$
+\end{center}
+Če je notranja vrednost opcije večja od nič, pravimo, da se opcija splača (ang. \textit{in-the-money}), če je enaka nič, je opcija na meji (ang. \textit{at-the-money}),
+in če je manjša od nič, se ne splača (ang. \textit{out-of-the-money}).
+Na primer, če je izvršilna cena nakupne opcije \textdollar$100$ in je tržna vrednost osnovnega premoženja \textdollar$105$, je notranja vrednost \textdollar$5$. 
+Če torej nosilec opcije proda osnovno premoženje za \textdollar$105$ in nato kupi opcijo za \textdollar$100$ realizira profit \textdollar$5$.
+Oglejmo si še primer s prodajno opcijo. Če je njena izvršilna cena \textdollar$100$ in trenutna tržna vrednost osnovnega premoženja \textdollar$92$, je notranja 
+vrednost take opcije \textdollar$8$. Nosilec take opcije realizira tolikšen profit, če vzporedno izvrši opcijo (proda premoženje prodajalcu za \textdollar$100$) in
+kupi to premoženje na trgu za \textdollar$92$.
 
-Na primer, če je cena izvršilna cena opcije 100$\$$ in je tržna vrednost osnovnega premoženja 105$\$$, je notranja vrednost 5$\$$. 
-Če torej nosilec opcije proda osnovno premoženje za 105$\$$ in nato kupi opcijo za 100$\$$ realizira profit 5$\$$.
+\begin{table}[h]
+    \centering
+    \begin{tabular} { c | c | c }
+        \toprule
+        & Nakupna opcija & Prodajna opcija \\
+        \hline
+        \textbf{Tržna cena > izvršilna cena} & \textbf{Tržna - Izvršilna} & \textbf{0}  \\
+        \hline
+        & opcija se splača & opcija se ne splača \\ 
+        & \textit{in-the-money} & \textit{out-of-the-money} \\
+        \hline
+        \textbf{Tržna cena < izvršilna cena} &\textbf{0} & \textbf{Izvršilna - Tržna} \\
+        \hline
+        & opcija se ne splača & opcija se splača \\
+        & \textit{out-of-the-money} &\textit{in-the-money}\\ 
+        \hline
+        \textbf{Tržna cena = izvršilna cena} & \textbf{0} & \textbf{0} \\
+        \hline
+        & opcija je na meji & opcija je na meji \\
+        & \textit{at-the-money} &  \textit{at-the-money} \\  
+        \bottomrule
+    \end{tabular}
+    \caption{Pregled izrazov}
+\end{table}
 
 \textbf{Časovna vrednost} je razlika med ceno opcije in njeno notranjo vrednostjo. Kupec opcije upa, da bodo spremembe na trgu pred
 dnevom zapadlosti spremenile vrednost osnovnega premoženja in tako povečale potencialni profit. Zaradi tega je kupec pripravljen plačati
@@ -225,14 +234,16 @@ Na ceno opcije vpliva 6 dejavnikov:
 V sledečem razdelku bomo obravnavali zgoraj navedene vplive na ceno opcije, pri tem pa predpostavili, da so vsi ostali
 dejavniki nespremenjeni.
 
-\textbf{Trenutna tržna cena osnovnega premoženja} vpliva na ceno opcije. V primeru nakupne opcije, se ob dvigu cene osnovnega premoženja
-dvigne tudi cena opcije. Razlog za to je dvig notranje vrednosti, ki raste z dvigom cen osnovnega premoženja. Obratno velja za prodajne
+\textbf{Trenutna tržna cena osnovnega premoženja} vpliva na ceno opcije. V primeru nakupne opcije, se ob 
+dvigu cene osnovnega premoženja dvigne tudi cena opcije. Razlog za to je dvig notranje vrednosti,
+ ki raste z dvigom cen osnovnega premoženja. Obratno velja za prodajne
 opcije - ob dvigu cene osnovnega premoženja, pade notranja vrednost in posledično tudi cena opcije.
 
-Nižja kot je \textbf{izvršilna cena terminske pogodbe}, višja je cena nakupne opcije. Za prodajne opcije pa velja: višja kot je cena 
-osnovnega premoženja, višja je cena opcije
+Nižja kot je \textbf{izvršilna cena opcije}, višja je cena nakupne opcije. Za prodajne opcije pa velja: višja kot je cena 
+osnovnega premoženja, višja je cena opcije.
 
-Daljši kot je \textbf{čas do zapadlosti}, višja je cena opcije. Za opcijo velja, da ko preteče datum zapadlosti, izgubi svojo vrednost.
+Daljši kot je \textbf{čas do zapadlosti}, višja je cena opcije. Za opcijo velja, da ko preteče datum zapadlosti, 
+izgubi svojo vrednost.
 Bliže kot smo temu datumu, manj je časa, da vrednost osnovnega premoženja zraste (za kupca prodajne opcije) in pade (za kupca nakupne) ---
 za kompenzacijo časovne vrednosti kupcu --- in zato verjetnost željene spremembe cene pade. Posledično se cena ameriške opcije bliža njeni
 notranji vrednosti, ko se bližamo dnevu zapadlosti.
@@ -254,6 +265,20 @@ opcijo nanj (v primeru nakupne opcije, kuponov ne prejemamo). Višja kot so kupo
 nakupne opcije nanj. Nasprotno pa velja za prodajne opcije. Nakup take opcije primerjamo s kratko prodajo osnovnega premoženja;
 višji kot so kuponi, več moramo izplačevati. Višji kot so kuponi, bolj privlačno je kupiti prodajno opcijo kot kratko prodati osnovno
 premoženje in zato cena prodajni opciji naraste.
+
+\begin{table}
+    \begin{tabular}{l|c|c}
+        Dejavnik & Nakupna opcija & Prodajna opcija \\
+        \hline\hline
+        Cena osnovnega premoženja & poveča & zmanjša \\
+        Izvršilna cena & zmanjša & poveča \\
+        Čas do zapadlosti & poveča & poveča \\
+        Pričakovane spremembe obrestnih mer & poveča & poveča \\
+        Kratkoročne netvegane obrestne mere & poveča & zmanjša \\
+        Kuponi & zmanjša & poveča
+    \end{tabular}
+    \caption{Vplivi razičnih dejavnikov na ceno opcije}
+\end{table}
 
 \subsection{Cena opcije na terminsko pogodbo}
 Cena opcije na terminsko pogodbo je izražena v 64-inah procenta nominalne cene terminske pogodbe. Torej cena 24 pomeni 24/64
