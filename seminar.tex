@@ -43,11 +43,11 @@ stiskalnice po precej višji ceni kot je plačal za najem stiskalnic.
 Opcija je pogodba, ki kupcu (tudi nosilcu) zagotavlja določene pravice v zvezi s prodajo ali nakupom osnovnega premoženja.
 O nakupni opciji (ang. \textbf{\textit{call option}}) govorimo, ko prodajalec (ang. \textit{seller, writer}) kupcu zagotovi pravico,
 da bo od njega odkupil osnovno premoženje (ang. \textit{the underlying}). O prodajni pa, ko si kupec opcije zagotovi 
-pravico do prodaje (ang.\textit{\textbf{put option}}).
+pravico do prodaje (ang. \textit{\textbf{put option}}).
 V zameno za tveganje, ki ga spreminjanje vrednosti osnovnega premoženja prinaša, 
 mora kupec plačati ceno opcije ali premijo. Ob sklenitvi pogodbe se strani dogovorita o ceni nakupa ali prodaje
 (ang. \textit{strike price, exercise price}) ter datumu, do katerega je pogodbo moč izvršiti.
-V tej nalogi se bomo osredotičili na opcije, kjer je osnovno premoženje obrestna mera ali obrestni instrument. 
+V tej nalogi se bomo osredotičili na opcije, kjer je osnovno premoženje obrestna mera ali instrument na obrestno mero. 
 
 Glede na možnost izvršitve pogodbe ločimo:
 \begin{itemize}
@@ -85,18 +85,17 @@ Glavna razlika med terminskimi pogodbami in opcijami je, da opcije nosilcu ni po
 vendar ne obveze, kar pa ne velja za terminske pogodbe - tam morata obe strani izpolniti svoj del posla.
 Posledično je razmerje med tveganjem in nagrado za instrumenta različno. Kupec terminske pogodbe pri naraščanju vrednosti
 realizira \textit{dollar-for-dollar} profit in \textit{dollar-for-dollar} izgubo ko vrednost pogodbe pada, prodajalec pa ravno nasprotno. V primeru
-opcij pa ni take simetrije - največ kar investitor lahko izgubi je premija, kar je hkrati največji profit, ki ga lahko realizira prodajalec;
-to je kompenzacija za potencialno izgubo.
+opcij pa ni take simetrije - največ kar investitor lahko izgubi je premija, kar je hkrati tudi največji profit, ki ga lahko realizira prodajalec.
 
+Pri trgovanju na borzah, se pojavi tudi razlika v zahtevanem kritju.
 Obe strani pri terminski pogodbi morata na svoja vzdrževalna računa položiti kritje in ga vzdrževati. Takih zahtev za kupca opcije
-po plačilu premije ni, saj ne glede na obnašanje osnovnega premoženja ne more izgubiti več kot premijo in zato ni potrebe po kritju.
-Drugače je za prodajalca. Ker on nosi tveganje mora imeti vzdrževalni račun, nanj pa običajno položi premijo kot kritje. Če se cena 
-opcije spreminja, mora kritje vzdrževati. To seveda velja le za trgovanje na borzah - na prostem trgu ni posrednika v obliki klirinške hiše.
+po plačilu premije ni, saj ne glede na spremembe v vrednosti osnovnega premoženja ne more izgubiti več kot je že plačal.
+Drugače pa velja za prodajalca. Ker on nosi tveganje mora imeti vzdrževalni račun, nanj pa kot kritje običajno položi premijo in vrednost osnovnega premoženja. Če se cena 
+opcije spreminja, mora kritje vzdrževati.
 
 \section{Primerjava opcij na reguliranem in prostem trgu}
-Z opcijami se, tako kot z ostalimi finančnimi instrumenti, trguje na organiziranem trgu in prostem trgu. Borza, ki želi trgovati
-z opcijami, mora najprej dobiti potrdila državnih regulativnih ustanov. Take opcije imajo tri glavne prednosti. Prvič, opcije na borzah
-so standardizirane; imajo poenoteno izvršilno ceno in datum zapadlosti. Drugič, podobno kot pri terminskih pogodbah, ni direktne povezave
+Z opcijami se, tako kot z ostalimi finančnimi instrumenti, trguje na organiziranem trgu in prostem trgu. Opcije na borzah imajo tri glavne prednosti. 
+Prvič, imajo poenoteno izvršilno ceno in datum zapadlosti, torej so do neke mere standardizirane. Drugič, podobno kot pri terminskih pogodbah, ni direktne povezave
 med kupcem in prodajalcem opcij. Klirinška hiša deluje kot posrednik in skrbi, da so plačila izvedena pravočasno. In tretjič, transkacijski
 stroški so na borzi manjši. 
 
@@ -153,7 +152,7 @@ Kupcu opcije kritja na vzdrževalni račun ni potrebno nalagati, saj po plačilu
 ne velja. Ker je v zameno za premijo sprejel tveganje spremembe vrednosti osnovnega premoženja, mora na svoj vzdrževalni račun
 naložiti kritje, ki ga mora sproti vzdrževati. To je sestavljeno iz vrednosti, ki jo zahteva terminska pogodba ter pogosto tudi premija.
 
-\subsubsection{Opcije na terminske pogodbe vs. na fiksne denarne tokove} \label{futuresvsphysicals}
+\subsubsection{Zakaj prevladujejo opcije na terminske pogodbe?} \label{futuresvsphysicals}
 Na organiziranem trgu so opcije na terminske pogodbe o obrestni meri v večinski meri izpodrinile opcije na instrumente s fiksnim
 denarnim tokom. Za to obstajajo trije razlogi: prvič, opcije na terminske pogodbe ne zahtevajo plačil natečenih obresti in jih ob izvršitvi kupcu
 nakupne ali prodajalcu prodajne opcije ni potrebno izplačati.
@@ -179,6 +178,11 @@ pa je (po plačani premiji) tveganju, da prodajalec ne bo mogel izplačati obvez
 
 Omejitev pri OTC opcijah ni - če se prodajalec lahko zaščiti pred tveganjem, ki ga prinaša potencialna izvršitev opcije, jo bo prodal.
 Tako te vrste opcije tudi niso omejene na ameriške ali evropske - pojavljajo se tudi modificirane ameriške, bermuda, \ldots.
+
+Prosti trg instrumentov na obrestno mero se v zadnjih letih povečuje. Po navedbah Banke za mednarodne poravnave ~\cite{bis}, se je dnevni promet
+med aprilom 2016 in aprilom 2019 povečal iz \textdollar$2.7$ biljonov na \textdollar$6.5$. Povečalo se je tudi trgovanje s takimi papirji na borzah, 
+vendar ne v tolikšni meri. Povedano drugače: medtem ko je OTC trg instrumentov na obrestno mero leta 2010 predstavljal 21\%, je lani aprila predstavljal
+46\%. 
 
 \section{Cena opcij} \label{cenaopcij}
 Ceno opcij lahko razdelimo na dva osnovna dela: notranjo vrednost (ang. \textit{intrinsic value}) in časovno vrednost(ang. \textit{time value}).
@@ -275,8 +279,8 @@ je kratka prodaja osnovnega premoženja privlačnejša kot nakup prodajne opcije
 opcijo nanj (v primeru nakupne opcije, kuponov ne prejemamo). Višja kot so kuponska izplačila osnovnega premoženja, nižja je cena
 nakupne opcije nanj. Nasprotno pa velja za prodajne opcije. Nakup take opcije primerjamo s kratko prodajo osnovnega premoženja;
 višji kot so kuponi, več moramo izplačevati. Višji kot so kuponi, bolj privlačno je kupiti prodajno opcijo kot kratko prodati osnovno
-premoženje in zato cena prodajni opciji naraste. 
-
+premoženje in zato cena prodajni opciji naraste. Višina kuponskih izplačil vpliva le na opcije na obveznice - terminske pogodbe kuponov ne 
+izplačujejo.
 
 \begin{table}
     \begin{tabular}{l|c|c}
