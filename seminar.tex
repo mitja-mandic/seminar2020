@@ -53,7 +53,7 @@ Glede na možnost izvršitve pogodbe ločimo:
 \begin{itemize}
     \item evropske opcije - izvršitev je možna le na dan zapadlosti
     \item ameriške opcije - izvršitev je možna kadarkoli do vključno dneva zapadlosti
-    \item eksotične opcije - izvršitev je možna na določene datume (atlantske, bermuda, \ldots)
+    \item eksotične opcije - izvršitev je možna na določene datume (atlantske, bermudske, \ldots)
 \end{itemize}
 Ameriške opcije imajo višjo ceno kot evropske, saj ponujajo tudi več možnosti, sicer bi to pomenilo arbitražo.
 Z opcijami se trguje tako na organiziranem trgu (borze), kot tudi na prostem trgu (ang. \textit{over-the-counter}).
@@ -84,7 +84,7 @@ Pri trgovanju z opcijami lahko zavzamemo štiri pozicije:
 Glavna razlika med terminskimi pogodbami in opcijami je, da opcije nosilcu ni potrebno izvršiti. Kupec ima pravico,
 vendar ne obveze, kar pa ne velja za terminske pogodbe - tam morata obe strani izpolniti svoj del posla.
 Posledično je razmerje med tveganjem in nagrado za instrumenta različno. Kupec terminske pogodbe pri naraščanju vrednosti
-realizira \textit{dollar-for-dollar} profit in \textit{dollar-for-dollar} izgubo ko vrednost pogodbe pada, prodajalec pa ravno nasprotno. V primeru
+realizira profit in izgubo ko vrednost pogodbe pada, prodajalec pa ravno nasprotno. V primeru
 opcij pa ni take simetrije - največ kar investitor lahko izgubi je premija, kar je hkrati tudi največji profit, ki ga lahko realizira prodajalec.
 
 Pri trgovanju na borzah, se pojavi tudi razlika v zahtevanem kritju.
@@ -99,7 +99,7 @@ Prvič, imajo poenoteno izvršilno ceno in datum zapadlosti, torej so do neke me
 med kupcem in prodajalcem opcij. Klirinška hiša deluje kot posrednik in skrbi, da so plačila izvedena pravočasno. In tretjič, transkacijski
 stroški so na borzi manjši. 
 
-Višja cena OTC opcij odraža njihovo prilagodljivost, ki jo zahtevajo institucionalni vlagatelji ko borzna opcija ne zadostuje
+Višja cena OTC opcij odraža njihovo prilagodljivost, ki jo zahtevajo institucionalni vlagatelji, ko borzna opcija ne zadostuje
 njihovim ciljem. Investicijske in komercialne banke izvajajo funkcijo kupca in tudi posrednika pri trgovanju s takimi
 opcijami. OTC opcija je sicer manj likvidna kot borzna, vendar to za institucionalne vlagatelje ne predstavlja večjih težav, 
 saj te opcije uporabljajo kot del upravljaja s tveganjem (ang. \textit{asset/liability strategy}) in jih zadržijo do zapadlosti.
@@ -111,7 +111,7 @@ kot terminske pogodbe o obrestni meri.
 V tem razdelku si bomo ogledali standardizirane opcije, s katerimi se trguje na borzi. Trguje se 
 tako z opcijami na instrumente s fiksnimi denarnimi tokovi  (ang. \textit{\textbf{options on physicals}}), 
 prevladujejo pa opcije na terminske pogodbe (ang. \textit{\textbf{futures options}}),
-zato jim bomo posvetili večino odseka, razdelku \ref{futuresvsphysicals} pa obrazložili, zakaj prevladujejo ravno te.
+zato jim bomo posvetili večino odseka, v razdelku \ref{futuresvsphysicals} pa obrazložili, zakaj prevladujejo ravno te.
 
 \subsubsection{Opcije na terminsko pogodbo o obrestni meri}
 Opcije na terminske pogodbe obstajajo na vse terminske pogodbe omenjene v seminarski nalogi Tima Kalana z naslovom 
@@ -130,14 +130,16 @@ Za lažje razumevanje, si oglejmo primer. Recimo, da investitor kupi nakupno opc
 \textdollar$85$. Naj bo trenutna cena te pogodbe na trgu \textdollar$95$  in naj investitor opcijo izvrši. Nosilec zavzame dolgo pozicijo v pogodbi, prodajalec
 pa kratko. Ker je tržna cena pogodbe \textdollar$95$, izvršilna pa \textdollar$85$, ima investitor profit \textdollar$10$, prodajalec pa tako izgubo. Sedaj ima
 investitor terminsko pogodbo s tržno vrednostjo \textdollar$95$ in jo lahko likvidira (brez stroškov likvidacije) ali pa zadrži dolgo pozicijo v
-tej terminski pogodbi. Če jo likvidira, zasluži \textdollar$95$ in ima tako profit \textdollar$10$. Lahko pa zadrži pogodbo in tvega, da ji bo vrednost padla,
-vendar v vsakem primeru zasluži \textdollar$10$ iz izvršitve opcije.
+tej terminski pogodbi. Če jo likvidira, zasluži \textdollar$95$ in ima tako profit \textdollar$10$, če pa se odloči zadržati dolgo pozicijo, je tako izpostavljen
+tveganju, ki ga ta prinaša. Vendar pa ne glede na končen izkupiček iz posla s terminsko pogodbo, zasluži \textdollar$10$ iz izvršitve opcije
+(na koncu njegovemu zaslužku ali izgubi prištejemo \textdollar$10$).
 
 Oglejmo si sedaj še prodajno opcijo z izvršitveno ceno \textdollar$85$ in naj bo trenutna tržna cena pogodbe v osnovnem premoženju \textdollar$60$. Če se kupec odloči
 izvršiti prodajno opcijo, zavzame kratko pozicijo v terminski pogodbi z izvršilno ceno \textdollar$85$, prodajalec opcije pa dolgo. Ker je cena
 na trgu nižja kot izvršilna, prodajalec plača kupcu razliko med cenama, torej \textdollar$25$. Kupec opcije sedaj drži kratko pozicijo
-v terminski pogodbi s ceno 60 in ima zopet dve možnosti: svojo pozicijo lahko likvidira, torej kupi terminsko pogodbo s ceno \textdollar$60$, ali
-ohrani pozicijo. V vsakem primeru pa zasluži \textdollar$25$.
+v terminski pogodbi s ceno 60 in ima zopet dve možnosti: svojo pozicijo lahko likvidira, torej kupi terminsko pogodbo s ceno \textdollar$60$ in zasluži \textdollar$25$, 
+ali ohrani kratko pozicijo in je tako, kot v primeru z nakupno opcijo izpostavljen tveganju, ki ga ta pozicija prinese. V vsakem primeru pa vsaj \textdollar$25$ zasluži
+(oziroma toliko manj izgubi) iz izvršitve opcije.
 
 \subsubsection{Cena opcij na terminsko pogodbo}
 Cena opcij na terminsko pogodbo je izražena v 64-inah procenta nominalne cene terminske pogodbe. Torej cena 24 pomeni 24/64
@@ -180,9 +182,9 @@ Omejitev pri OTC opcijah ni - če se prodajalec lahko zaščiti pred tveganjem, 
 Tako te vrste opcije tudi niso omejene na ameriške ali evropske - pojavljajo se tudi modificirane ameriške, bermuda, \ldots.
 
 Prosti trg instrumentov na obrestno mero se v zadnjih letih povečuje. Po navedbah Banke za mednarodne poravnave ~\cite{bis}, se je dnevni promet
-med aprilom 2016 in aprilom 2019 povečal iz \textdollar$2.7$ biljonov na \textdollar$6.5$. Povečalo se je tudi trgovanje s takimi papirji na borzah, 
+med aprilom 2016 in aprilom 2019 povečal iz \textdollar$2.7$ biljonov na \textdollar$6.5$ biljonov. Povečalo se je tudi trgovanje s takimi papirji na borzah, 
 vendar ne v tolikšni meri. Povedano drugače: medtem ko je OTC trg instrumentov na obrestno mero leta 2010 predstavljal 21\%, je lani aprila predstavljal
-46\%. 
+46\% trga instrumentov na obrestno mero. 
 
 \section{Cena opcij} \label{cenaopcij}
 Ceno opcij lahko razdelimo na dva osnovna dela: notranjo vrednost (ang. \textit{intrinsic value}) in časovno vrednost(ang. \textit{time value}).
