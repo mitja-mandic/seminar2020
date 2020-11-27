@@ -41,7 +41,36 @@ def uredi_po_kotu(seznam):
     prvi = seznam[0]
     return [prvi] + sorted(seznam[1:], key=lambda x: kot_med_tockama(prvi,x))
 
-#mreza = mreza(5,5)
+
+#LEVO, DESNO, KOLINEARNE = 1,-1,0
+
+def graham_scan(seznam):
+
+    #def cmp(a, b):
+    #    return (a > b) - (a < b)
+
+    def ovinek(p, q, r):
+        return (q[0] - p[0])*(r[1] - p[1]) - (r[0] - p[0])*(q[1] - p[1])
+    
+    urejene_tocke = uredi_po_kotu(seznam)
+    ovojnica = [] #stack v katerega dodajamo točke
+
+    for tocka in urejene_tocke:
+
+        while len(ovojnica) > 1 and ovinek(ovojnica[-2],ovojnica[-1],tocka) <= 0:
+            
+            ovojnica.pop()
+
+
+        ovojnica.append(tocka)
+
+    return ovojnica
+
+
+mreza = mreza(4,4)
 ##[print(x) for x in mreza]
 #print(uredi_po_kotu(mreza))
-##print(mreza)
+
+#nova_mreza = list(set(mreza) - set(graham_scan(mreza)))
+
+#print(graham_scan(nova_mreza))
